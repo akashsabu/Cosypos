@@ -8,7 +8,10 @@ export default function sideBar() {
       <ul>
         <li>
           <Logo>
-           <Link to= "/"> <LogoImg src={require("../Asset/logo-full.svg").default} /> </Link>
+            <Link to="/">
+              {" "}
+              <LogoImg src={require("../Asset/logo-full.svg").default} />{" "}
+            </Link>
           </Logo>
         </li>
         <li>
@@ -32,6 +35,19 @@ export default function sideBar() {
           <SideMenu to="/PageNotFound">Accounting</SideMenu>
         </li>
       </ul>
+
+      <Div>
+        <Span>L</Span>{" "}
+        Lesliya K
+      </Div>
+      <Div>
+        <Span>C</Span>{" "} 
+        Camaron W.
+      </Div>
+      <Div>
+        <Span>J</Span>{" "} 
+        Jacob J.
+      </Div>
     </SideNav>
   );
 }
@@ -72,3 +88,22 @@ const SideMenu = styled(Link)`
     background-color: #f1f1f1;
   }
 `;
+const Div = styled.div`
+width: fit-content;
+border: 2px solid #ccc;
+background-color: #FFF;
+  border-radius: 15px; 
+  padding-block :3px ;
+  padding-left: 10px;
+  padding-right: 10px;
+`;
+const Span = styled.div`
+  border-radius: 50%;  
+  height: 25px;
+  width: 25px;
+  display: inline-flex;
+  justify-content: center;
+
+`;
+
+
