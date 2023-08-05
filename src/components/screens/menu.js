@@ -2,7 +2,7 @@ import React from "react";
 import { styled } from "styled-components";
 import categorySection from "../modules/menuCategory"
 import MenuItem from "../modules/MenuItems"
-import test from "../modules/test";
+import Cart from './../modules/Cart';
 
 export default function menu() {
 
