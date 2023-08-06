@@ -1,46 +1,46 @@
 import React from "react";
 import { styled } from "styled-components";
-import menuCategoryCard from "../modules/menuCategoryCard"
-import MenuItem from "../modules/MenuItems"
+import menuCategoryCard from "../modules/menuCategoryCard";
+import MenuItem from "../modules/MenuItems";
 export default function menu() {
-
-
   return (
+
+    <>
     <MenuContainer>
       <Input type="text" placeholder="Search.." />
       <MiddleSection>
         <TopDiv>{menuCategoryCard()}</TopDiv>
-        
-        <hr/>
-       
+
+        <hr />
+
         {MenuItem()}
 
         <BottomDiv>
           <TableDiv>
-            <InnerDiv>T4</InnerDiv>
-            <NameSpan>Leslie K</NameSpan>
-            <br/>
-            <OrderSpan>6 items &rarr; Kitchen</OrderSpan>
+            <InnerDiv1>T4</InnerDiv1>
+            <InnerDiv2>
+              <NameP>Leslie K</NameP>
+              <OrderP>6 items &rarr; Kitchen</OrderP>
+            </InnerDiv2>
           </TableDiv>
           <TableDiv>
-            <InnerDiv>T4</InnerDiv>
-            <NameSpan>Leslie K</NameSpan>
-            <br/>
-            <OrderSpan>6 items &rarr; Kitchen</OrderSpan>
+            <InnerDiv1>T4</InnerDiv1>
+            <InnerDiv2>
+              <NameP>Leslie K</NameP>
+              <OrderP>6 items &rarr; Kitchen</OrderP>
+            </InnerDiv2>
           </TableDiv>
           <TableDiv>
-            <InnerDiv>T4</InnerDiv>
-            <NameSpan>Leslie K</NameSpan>
-            <br/>
-            <OrderSpan>6 items &rarr; Kitchen</OrderSpan>
+            <InnerDiv1>T4</InnerDiv1>
+            <InnerDiv2>
+              <NameP>Leslie K</NameP>
+              <OrderP>6 items &rarr; Kitchen</OrderP>
+            </InnerDiv2>
           </TableDiv>
         </BottomDiv>
-    
       </MiddleSection>
-      
-      <BillingSide></BillingSide>
-    
     </MenuContainer>
+  </>
   );
 }
 
@@ -60,8 +60,7 @@ const Input = styled.input`
   font-size: 17px;
 `;
 
-const MiddleSection = styled.div`
-`;
+const MiddleSection = styled.div``;
 const TopDiv = styled.div`
   width: fit-content;
   display: grid;
@@ -70,32 +69,42 @@ const TopDiv = styled.div`
   margin-inline: auto;
 `;
 
-
 const BottomDiv = styled.div`
-
-display: grid;
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  `;
+  height: 100px;
+`;
 const TableDiv = styled.div`
-display: flex;
-border:1px solid #FFF;
-align-items: center;
+  height: 100%;
+  display: flex;
+  border: 1px solid #fff;
+  border-bottom: none;
+  align-items: center;
+  justify-content: space-evenly;
+  &:first-child {
+    border-left: none;
+  }
+  &:last-child {
+    border-right: none;
+  }
 `;
 
-const InnerDiv = styled.div`
-display: inline-flex;
-height:30px;
-width:30px;
-align-items:center;
-justify-content: center;
-background-color: #C9CAEE;
-border-radius: 5px;
-
+const InnerDiv1 = styled.div`
+  display: inline-flex;
+  height: 35px;
+  width: 35px;
+  align-items: center;
+  justify-content: center;
+  background-color: #c9caee;
+  border-radius: 5px;
 `;
-const NameSpan = styled.span``;
-const OrderSpan = styled.span``;
+const InnerDiv2 = styled.div``;
 
-
+const NameP = styled.p`
+  margin-bottom: 0px;
+`;
+const OrderP = styled.p`
+  margin-top: 5px;
+`;
 
 const BillingSide = styled.div``;
-

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Menu from "./MenuCard";
 import Cart from "./Cart";
 import { styled } from "styled-components";
+import Billing from "./Billing";
 
 export default function MenuItems() {
   const [items, setItems] = useState([
@@ -24,8 +25,7 @@ export default function MenuItems() {
     setItems((prevItems) =>
       prevItems.map((item) =>
         item.id === itemId ? { ...item, count: item.count + 1 } : item
-      )
-    );
+      ));
   };
 
   const handleDecrement = (itemId) => {
@@ -34,25 +34,25 @@ export default function MenuItems() {
         item.id === itemId && item.count > 0
           ? { ...item, count: item.count - 1 }
           : item
-      )
-    );
+      ));
   };
 
   return (
     <>
-    <MiddleDiv>
-      <Menu
-        items={items}
-        onAddToCart={handleIncrement}
-        onRemoveFromCart={handleDecrement}
+      <MiddleDiv>
+        <Menu
+          items={items}
+          onAddToCart={handleIncrement}
+          onRemoveFromCart={handleDecrement}
+        />
+      </MiddleDiv>
+     
+      <Billing
+       items={items}
+       onIncrement={handleIncrement}
+       onDecrement={handleDecrement}
       />
-    </MiddleDiv>
-    <Cart
-    items={items}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-  />
-  </>
+    </>
   );
 }
 
