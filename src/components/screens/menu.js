@@ -1,14 +1,11 @@
-import React, { useState }  from "react";
+import React, { useState } from "react";
 import { styled } from "styled-components";
 import menuCategoryCard from "../modules/menuCategoryCard";
 import Billing from "../modules/Billing";
 import MenuCard from "../modules/MenuCard";
-
-
-
+import  search  from '../Asset/search.svg';
 
 export default function Menu() {
-  
   const [items, setItems] = useState([
     {
       id: 1,
@@ -29,7 +26,8 @@ export default function Menu() {
     setItems((prevItems) =>
       prevItems.map((item) =>
         item.id === itemId ? { ...item, count: item.count + 1 } : item
-      ));
+      )
+    );
   };
 
   const handleDecrement = (itemId) => {
@@ -38,37 +36,28 @@ export default function Menu() {
         item.id === itemId && item.count > 0
           ? { ...item, count: item.count - 1 }
           : item
-      ));
+      )
+    );
   };
 
-
-  
-
-
   return (
-    <>
+    <Div>
       <MenuContainer>
+        <Form>
+          <img style={{width:"20px"}} src={search}/>
+          <Input type="text" placeholder="Search.." />
+        </Form>
 
-
-
-        <Input type="text" placeholder="Search.." />
-        <MiddleSection>
           <TopDiv>{menuCategoryCard()}</TopDiv>
-          <hr />
-          
-          
-      <MiddleDiv>
-        <MenuCard
-          items={items}
-          onAddToCart={handleIncrement}
-          onRemoveFromCart={handleDecrement}
-        />
-      </MiddleDiv>
-          
-          
-          
-          
-          
+
+          <MiddleDiv>
+            <MenuCard
+              items={items}
+              onAddToCart={handleIncrement}
+              onRemoveFromCart={handleDecrement}
+            />
+          </MiddleDiv>
+
           <BottomDiv>
             <TableDiv>
               <InnerDiv1>T4</InnerDiv1>
@@ -94,50 +83,79 @@ export default function Menu() {
               </InnerDiv2>
             </TableDiv>
           </BottomDiv>
-        </MiddleSection>
+    
       </MenuContainer>
-      <Billing
-       items={items}
-       onIncrement={handleIncrement}
-       onDecrement={handleDecrement}
+      <BillingContainer>
+        <Billing
+        items={items}
+        onIncrement={handleIncrement}
+        onDecrement={handleDecrement}
       />
-    </>
+      </BillingContainer>
+      
+    </Div>
   );
 }
+const Div = styled.div`
+height: 100%;
+width: 100%;
+display: flex;
+justify-content: space-evenly;
+position: fixed;
+left: 250px;
+background: #000;
+padding-right: 10px;
+
+`;
 
 const MenuContainer = styled.div`
   height: 100%;
-  /* overflow: hidden; */
   background-color: #000;
-  position: fixed;
-  left: 240px;
-  padding-inline: 20px;
-`;
-const Input = styled.input`
-  padding: 6px;
-  border: none;
-  margin-top: 30px;
-  margin-left: 20px;
-  font-size: 17px;
+  padding: 30px;
+  box-sizing: border-box;
 `;
 
-const MiddleSection = styled.div``;
+const Form = styled.div`
+width: 250px;
+height: 35px;
+  color: #d2d2d2;
+  display: flex;
+  border-radius: 2px;
+  background: #2d2d2d;
+  padding-inline: 10px;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+
+`;
+const Input = styled.input`
+width: 100%;
+  margin: 0;
+  padding: 7px 8px;
+  font-size: 14px;
+  background: transparent;
+  outline: none;
+  border: none;
+  color: #d2d2d2;
+
+`;
 
 const TopDiv = styled.div`
   width: fit-content;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 12px;
+  gap: 15px;
   margin-inline: auto;
-  margin-block: 10px;
+  margin-block: 20px;
 `;
 const MiddleDiv = styled.div`
   width: fit-content;
-  margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 12px;
+  gap: 15px;
+
   margin-inline: auto;
+  padding-block: 20px;
+  border-top: 1px solid #d2d2d2;
 `;
 
 const BottomDiv = styled.div`
@@ -150,9 +168,9 @@ const TableDiv = styled.div`
   width: 100%;
   display: flex;
   border: 1px solid #fff;
-  border-bottom: none;
   align-items: center;
   justify-content: space-evenly;
+  padding-block:10px ;
   &:first-child {
     border-left: none;
   }
@@ -165,6 +183,7 @@ const InnerDiv1 = styled.div`
   display: inline-flex;
   height: 35px;
   width: 35px;
+  color: #2d2d2d;
   align-items: center;
   justify-content: center;
   background-color: #c9caee;
@@ -173,10 +192,14 @@ const InnerDiv1 = styled.div`
 const InnerDiv2 = styled.div``;
 
 const NameP = styled.p`
-  margin-bottom: 0px;
-  margin-top: 5px;
+   margin-block: 0px;
+   font-size: 16px;
+
+
 `;
 const OrderP = styled.p`
-  margin-top: 5px;
-  margin-bottom: 0px;
+  margin-block: 0px;
+  font-size: 12px;
 `;
+
+const BillingContainer = styled.div``;

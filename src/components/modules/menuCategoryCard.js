@@ -70,8 +70,8 @@ export default function menuCategoryCard() {
 } 
 
 const CategoryDiv = styled.div`
-  height: 100px;
-  width: 170px;
+  height: 110px;
+  width: 180px;
   border-radius: 5px;
   padding: 15px 10px 10px 10px;
   box-sizing: border-box;

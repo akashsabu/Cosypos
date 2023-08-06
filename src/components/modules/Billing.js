@@ -14,6 +14,7 @@ export default function Billing({ items }) {
   var tot = (cost * 1 + cost * 0.1).toFixed(2);
 
   return (
+    <>
     <BillingContainer>
       <TableDiv>
         <InnerDiv1>
@@ -79,17 +80,16 @@ export default function Billing({ items }) {
         </PaymentMethodDiv>
       </PaymentDiv>
     </BillingContainer>
+    </>
   );
 }
 const BillingContainer = styled.div`
-  width: 360px;
+  width: 100%;
   height: 100%;
   color:  #D2D2D2;
   /* overflow: hidden; */
   background-color: #000;
-  position: fixed;
-  right: 40px;
-  top: 0%;
+ 
 `;
 
 const TableDiv = styled.div`
@@ -121,7 +121,7 @@ const InnerDiv2 = styled.div`
 const CartContainer = styled.div`
   height: 150px;
   width: 300px;
-  margin: 20px auto;
+  margin: 30px auto;
   color: white;
   overflow-y: auto;
 `;
@@ -178,8 +178,6 @@ const Box = styled.div`
   width: 70px;
   display: flex;
   justify-content: center;
-  
-
   border: 1px solid #D2D2D2;
   border-radius: 5px;
   &:hover{
