@@ -59,7 +59,7 @@ const categories = [
       image: alcohol,
     },
   ];
-export default function categorySection() {
+export default function menuCategoryCard() {
     return categories.map((result) => (
         <CategoryDiv key={result.category} style={{ background: result.color }}>
           <img src={result.image} />

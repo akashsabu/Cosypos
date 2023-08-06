@@ -1,9 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
-import categorySection from "../modules/menuCategory"
+import menuCategoryCard from "../modules/menuCategoryCard"
 import MenuItem from "../modules/MenuItems"
-import Cart from './../modules/Cart';
-
 export default function menu() {
 
 
@@ -11,12 +9,37 @@ export default function menu() {
     <MenuContainer>
       <Input type="text" placeholder="Search.." />
       <MiddleSection>
-        <TopDiv>{categorySection()}</TopDiv>
+        <TopDiv>{menuCategoryCard()}</TopDiv>
+        
         <hr/>
-        <MiddleDiv>{MenuItem()}</MiddleDiv>
-        <BottomDiv></BottomDiv>
+       
+        {MenuItem()}
+
+        <BottomDiv>
+          <TableDiv>
+            <InnerDiv>T4</InnerDiv>
+            <NameSpan>Leslie K</NameSpan>
+            <br/>
+            <OrderSpan>6 items &rarr; Kitchen</OrderSpan>
+          </TableDiv>
+          <TableDiv>
+            <InnerDiv>T4</InnerDiv>
+            <NameSpan>Leslie K</NameSpan>
+            <br/>
+            <OrderSpan>6 items &rarr; Kitchen</OrderSpan>
+          </TableDiv>
+          <TableDiv>
+            <InnerDiv>T4</InnerDiv>
+            <NameSpan>Leslie K</NameSpan>
+            <br/>
+            <OrderSpan>6 items &rarr; Kitchen</OrderSpan>
+          </TableDiv>
+        </BottomDiv>
+    
       </MiddleSection>
+      
       <BillingSide></BillingSide>
+    
     </MenuContainer>
   );
 }
@@ -47,13 +70,32 @@ const TopDiv = styled.div`
   margin-inline: auto;
 `;
 
-const MiddleDiv = styled.div`
-width: fit-content;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 12px;
-  margin-inline: auto;
+
+const BottomDiv = styled.div`
+
+display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   `;
-const BottomDiv = styled.div``;
+const TableDiv = styled.div`
+display: flex;
+border:1px solid #FFF;
+align-items: center;
+`;
+
+const InnerDiv = styled.div`
+display: inline-flex;
+height:30px;
+width:30px;
+align-items:center;
+justify-content: center;
+background-color: #C9CAEE;
+border-radius: 5px;
+
+`;
+const NameSpan = styled.span``;
+const OrderSpan = styled.span``;
+
+
+
 const BillingSide = styled.div``;
 
