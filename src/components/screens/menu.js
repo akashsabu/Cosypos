@@ -74,7 +74,7 @@ export default function Menu() {
             <TableDiv>
               <InnerDiv1>T4</InnerDiv1>
               <InnerDiv2>
-                <NameP>Leslie K</NameP>
+              <NameP>Leslie K   <ProcessSpan>in process</ProcessSpan></NameP>
                 <OrderP>6 items &rarr; Kitchen</OrderP>
               </InnerDiv2>
             </TableDiv>
@@ -82,7 +82,7 @@ export default function Menu() {
             <TableDiv>
               <InnerDiv1>T4</InnerDiv1>
               <InnerDiv2>
-                <NameP>Leslie K</NameP>
+                <NameP>Leslie K   <ProcessSpan>in process</ProcessSpan></NameP>
                 <OrderP>6 items &rarr; Kitchen</OrderP>
               </InnerDiv2>
             </TableDiv>
@@ -169,6 +169,7 @@ const BottomDiv = styled.div`
   padding-block: 10px;
 `;
 const TableDiv = styled.div`
+height: 50px;
   width: 100%;
   display: flex;
   border: 1px solid #fff;
@@ -193,11 +194,29 @@ const InnerDiv1 = styled.div`
   background-color: #c9caee;
   border-radius: 5px;
 `;
+const ProcessSpan = styled.span`
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+height: 20px;
+background: #84C27D;
+padding-inline: 7px;
+border-radius: 12px;
+color: #2d2d2d;
+font-size: 10px;
+`;
+
 const InnerDiv2 = styled.div``;
 
 const NameP = styled.p`
+width: 150px;
+display: flex;
    margin-block: 0px;
    font-size: 16px;
+   align-items: center;
+   justify-content: space-between;
+
 
 
 `;
