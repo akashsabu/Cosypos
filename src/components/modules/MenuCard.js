@@ -13,11 +13,11 @@ const Menu = ({ items, onAddToCart, onRemoveFromCart }) => {
 
           <CountDiv>
             <Button onClick={() => onRemoveFromCart(item.id)}>
-              <img style={{ width: "15px" }} src={minus} />
+              <img style={{ width: "15px" }} src={minus} alt="minus" />
             </Button>
             <CountSpan id>{item.count}</CountSpan>
             <Button onClick={() => onAddToCart(item.id)}>
-              <img style={{ width: "15px" }} src={plus} />
+              <img style={{ width: "15px" }} src={plus} alt="plus"/>
             </Button>
           </CountDiv>
         </ItemDiv>

@@ -62,7 +62,7 @@ const categories = [
 export default function menuCategoryCard() {
     return categories.map((result) => (
         <CategoryDiv key={result.category} style={{ background: result.color }}>
-          <img src={result.image} />
+          <img src={result.image} alt=" category" />
           <CatName>{result.category}</CatName>
           <CatNo>{result.no} items</CatNo>
         </CategoryDiv>

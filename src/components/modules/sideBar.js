@@ -1,40 +1,41 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
+import copy from "../Asset/Copyright-color.svg"
 
 export default function sideBar() {
   return (
     <SideNav>
-      <Ul>
-        <li>
+      <Nav>
+        <div>
           <Logo>
             <Link to="/">
               {" "}
               <LogoImg src={require("../Asset/logo-full.svg").default} />{" "}
             </Link>
           </Logo>
-        </li>
-        <li>
+        </div>
+        <div>
           {" "}
-          <SideMenu to="/PageNotFound">Reservation</SideMenu>
-        </li>
-        <li>
+          <SideMenu to="/Reservation">Reservation</SideMenu>
+        </div>
+        <div>
           {" "}
-          <SideMenu to="/PageNotFound">Table Services</SideMenu>
-        </li>
-        <li>
+          <SideMenu to="/TableService">Table Services</SideMenu>
+        </div>
+        <div>
           {" "}
           <SideMenu to="/menu">Menu</SideMenu>
-        </li>
-        <li>
+        </div>
+        <div>
           {" "}
-          <SideMenu to="/PageNotFound">Delivery</SideMenu>
-        </li>
-        <li>
+          <SideMenu to="/Delivery">Delivery</SideMenu>
+        </div>
+        <div>
           {" "}
-          <SideMenu to="/PageNotFound">Accounting</SideMenu>
-        </li>
-      </Ul>
+          <SideMenu to="/Accounting">Accounting</SideMenu>
+        </div>
+      </Nav>
 
       <Div>
         <Span style={{background:"#E4CDEE"}}>L</Span>{" "}
@@ -49,19 +50,23 @@ export default function sideBar() {
         Jacob J.
       </Div>
 
-
+      <CopyRight>
+        <img src={copy}/>
+        {" "}
+        <Copyspan>2022 Cosypos App</Copyspan>
+      </CopyRight>
     </SideNav>
   );
 }
 
 const SideNav = styled.div`
-  height: 100%;/*  Full-height: remove this if you want "auto" height */
+  height: 100vh; /*Full-height: remove this if you want "auto" height*/
   width: 200px; /* Set the width of the sidebar */
    position: fixed;/* Fixed Sidebar (stay in place on scroll) */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: #111; /* Black */
+  background-color: #000; /* Black */
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 10px;
   padding-inline: 25px;
@@ -70,7 +75,7 @@ const SideNav = styled.div`
 const Logo = styled.span`
   width: 200px;
   display: inline-block;
-  margin-bottom: 15px;
+  margin-block: 15px;
 `;
 
 const LogoImg = styled.img`
@@ -78,19 +83,22 @@ const LogoImg = styled.img`
   width: 100%;
 `;
 
-const Ul = styled.ul`
+const Nav = styled.nav`
 margin-bottom: 160px;
 `;
-const SideMenu = styled(Link)`
+const SideMenu = styled(NavLink)`
   text-decoration: none;
   font-size: 18px;
   color: #818181;
   display: block;
   margin-bottom: 10px;
   border-radius: 3px;
-  padding: 6px 10px 0px 6px;
+  padding: 6px 5px 5px 6px;
   &:hover {
-    background-color: #f1f1f1;
+    background-color: #2d2d2d;
+  }
+  &.active{
+    background-color: #2d2d2d;
   }
 `;
 const Div = styled.div`
@@ -118,7 +126,16 @@ const Span = styled.div`
 
 `;
 
-
+const CopyRight = styled.div`
+display: flex;
+align-items: center;
+gap: 5px;
+margin-top: 50px;
+`;
+const Copyspan = styled.span`
+color:#8E8E8E;
+font-size: 12px;
+`;
 
 
 

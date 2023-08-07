@@ -22,12 +22,12 @@ export default function Billing({ items }) {
           <TableName>Leslie K.</TableName>
         </InnerDiv1>
         <InnerDiv2>
-          <img style={{ width: "25px" }} src={editSvg} />
+          <img style={{ width: "25px" }} src={editSvg} alt="edit" />
         </InnerDiv2>
       </TableDiv>
 
       <CartContainer>
-        {items.reduce((acc, item) => acc + item.count, 0) == 0
+        {items.reduce((acc, item) => acc + item.count, 0) === 0
           ? "Your Order is Empty"
           : null}
 
@@ -55,21 +55,21 @@ export default function Billing({ items }) {
            
               <PaymentCard>
                 <Box>
-                  <Img style={{ width: "30px" }} src={Cash} />
+                  <Img style={{ width: "30px" }} src={Cash} alt="cash" />
                 </Box>
                 Cash
               </PaymentCard>
               
               <PaymentCard>
                 <Box>
-                  <img style={{ width: "30px" }} src={Debit} />
+                  <img style={{ width: "30px" }} src={Debit} alt="debitcard" />
                 </Box>
                 Debit Card
               </PaymentCard>
            
               <PaymentCard>
                 <Box>
-                  <Img style={{ width: "30px" }} src={Ewallet} />
+                  <Img style={{ width: "30px" }} src={Ewallet} alt="ewallet"/>
                 </Box>
                 E-Wallet
               </PaymentCard>

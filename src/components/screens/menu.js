@@ -44,7 +44,7 @@ export default function Menu() {
     <Div>
       <MenuContainer>
         <Form>
-          <img style={{width:"20px"}} src={search}/>
+          <img style={{width:"20px"}} src={search} alt="search"/>
           <Input type="text" placeholder="Search.." />
         </Form>
 
@@ -97,7 +97,7 @@ export default function Menu() {
   );
 }
 const Div = styled.div`
-height: 100%;
+height: 100vh;
 width: 100%;
 display: flex;
 justify-content: space-evenly;

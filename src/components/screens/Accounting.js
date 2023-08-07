@@ -1,17 +1,18 @@
-import React from 'react'
-import styled from "styled-components";
+import React from "react";
 import { Helmet } from "react-helmet";
+import styled from "styled-components";
 
-export default function pageNotFound() {
+export default function Accounting() {
   return (
     <Div>
       <Helmet>
-        <title>CosyPOS | Delivery</title>
+        <title>CosyPOS | Accounting</title>
       </Helmet>
+
       <main class="main">
         <section class="contact">
           <h1 class="title">CosyPOS</h1>
-          <h2 class="sub-title">Oops... page not found</h2>
+          <h2 class="sub-title">Accounting Site Under Construction</h2>
         </section>
       </main>
     </Div>
