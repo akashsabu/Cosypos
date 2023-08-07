@@ -4,6 +4,7 @@ import menuCategoryCard from "../modules/menuCategoryCard";
 import Billing from "../modules/Billing";
 import MenuCard from "../modules/MenuCard";
 import  search  from '../Asset/search.svg';
+import { Helmet } from "react-helmet";
 
 export default function Menu() {
   const [items, setItems] = useState([
@@ -42,6 +43,9 @@ export default function Menu() {
 
   return (
     <Div>
+      <Helmet>
+        <title>CosyPOS | Menu</title>
+      </Helmet>
       <MenuContainer>
         <Form>
           <img style={{width:"20px"}} src={search} alt="search"/>
